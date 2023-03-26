@@ -6,7 +6,7 @@
 # In[28]:
 
 
-from dash import Dash, html, dcc
+import dash
 import pandas as pd
 import numpy as np
 from copy import deepcopy
@@ -513,16 +513,16 @@ fig = fig.update_layout(
 # In[ ]:
 
 
-app = Dash(__name__)
+app = dash.Dash(__name__)
 
-app.layout = html.Div(children=[
-    html.H1(children='REACH Data Web-Viewer'),
+app.layout = dash.html.Div(children=[
+    dash.html.H1(children='REACH Data Web-Viewer'),
 
-    html.Div(children='''
+    dash.html.Div(children='''
         Simple.
     '''),
 
-    dcc.Graph(
+    dash.dcc.Graph(
         id='example-graph',
         figure=fig
     )
